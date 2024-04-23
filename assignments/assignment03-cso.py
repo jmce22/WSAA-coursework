@@ -1,9 +1,11 @@
+# The task for this assignment was to write a program that retrieves the dataset for 
+# the "exchequer account (historical series)" from the CSO, and stores it into a file called "cso.json"
+
 import requests
 import json
 
 # Using RESTful API from available options
 url = "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/FIQ02/JSON-stat/2.0/en"
-
 
 def getAll():
     response = requests.get(url)
@@ -16,3 +18,5 @@ if __name__ == "__main__":
 
 # this code allows us to write the data from the API into a file called cso.json.
 # the with statement ensures the file is closed after it is written
+
+# Note: use Shift + Alt + F when viewing the outputted json file to format it in a more readible manner
