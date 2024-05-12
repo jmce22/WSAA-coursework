@@ -1,8 +1,7 @@
-# Runner dao 
-# this is a demonstration a data layer that connects to a datbase
+# Gym DAO
 
 import mysql.connector
-import dbconfig as cfg
+import config as cfg
 class gymDAO:
     connection=""
     cursor =''
@@ -71,24 +70,25 @@ class gymDAO:
 
     def update(self, id, gym):
         cursor = self.getcursor()
-        sql="update gym set name= %s,sex=%s, age=%s, height=%s, weight=%s where id = %s"
-        
+        sql="update gym set name= %s, sex=%s, age=%s, height=%s, weight=%s where id = %s"
         values = (gym.get("name"), gym.get("sex"), gym.get("age"), gym.get("height"), gym.get("weight"), id)
         cursor.execute(sql, values)
+        
         self.connection.commit()
         self.closeAll()
+        return gym
         
     def delete(self, id):
         cursor = self.getcursor()
         sql="delete from gym where id = %s"
         values = (id,)
-
         cursor.execute(sql, values)
 
         self.connection.commit()
         self.closeAll()
         
-        print("delete done")
+        # print("delete done")
+        return True
 
     def convertToDictionary(self, resultLine):
         attkeys=['id','name','sex', 'age', 'height', 'weight']

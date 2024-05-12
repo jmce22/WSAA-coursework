@@ -23,8 +23,10 @@ def getAll():
 def findById(id):
         return jsonify(gymDAO.findByID(id))
 
-#create
-#curl -X POST -d "{\"id\":\"234\", \"name\":\"some guy\", \"sex\":\"male\", \"age\":\"43\", \"height\":\"180\", \"weight\":\"80\"}" http://127.0.0.1:5000/gym
+
+# create
+# need to set Content-type to JSON and pass in paramter -H "Content-Type: application/json" - see https://reqbin.com/req/c-dwjszac0/curl-post-json-example
+# curl -X POST -H "Content-Type: application/json" -d "{\"name\":\"Frank Furter\", \"sex\":\"male\", \"age\":\"22\", \"height\":\"190\", \"weight\":\"84\"}" http://127.0.0.1:5000/gym
 @app.route('/gym', methods=['POST'])
 def create():
         # read json from the body
@@ -54,7 +56,7 @@ def create():
         return jsonify(gymDAO.create(gym))
 
 # update
-# curl -X PUT -d "{\"id\":\"234\", \"name\":\"some guy\", \"sex\":\"male\", \"age\":\"43\", \"height\":\"180\", \"weight\":\"80\"}" http://127.0.0.1:5000/gym/1
+# curl -X PUT -d "{\"id\":\"3\", \"name\":\"some guy\", \"sex\":\"male\", \"age\":\"43\", \"height\":\"180\", \"weight\":\"80\"}" http://127.0.0.1:5000/gym/3
 
 @app.route('/gym/<int:id>', methods=['PUT'])
 def update(id):
