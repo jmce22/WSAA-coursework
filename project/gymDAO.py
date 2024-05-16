@@ -67,7 +67,6 @@ class gymDAO:
         self.closeAll()
         return gym
 
-
     def update(self, id, gym):
         cursor = self.getcursor()
         sql="update gym set name= %s, sex=%s, age=%s, height=%s, weight=%s where id = %s"
