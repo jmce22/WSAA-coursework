@@ -19,11 +19,11 @@ member = {
 #print (result)
 
 #update
-new_member_values= {"name":"John Lampardo", "sex":"male", "age":45, "height":177.5, "weight":89.0}
-gymDAO.update(11,new_member_values)
-result = gymDAO.findByID(11);
-print("test update")
-print (result)
+#new_member_values= {"name":"John Paul Pope", "sex":"male", "age":98, "height":178.5, "weight":89.0}
+#gymDAO.update(13,new_member_values)
+#result = gymDAO.findByID(13);
+#print("test update")
+#print (result)
 
 # get all 
 #print("test get all")
@@ -31,5 +31,6 @@ print (result)
 #for member in allMembers:
 #  print(member)
 
+
 # delete
-#gymDAO.delete(8)
+# gymDAO.delete(13)

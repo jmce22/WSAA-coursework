@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-        return "Hello world"
+        return 'Hello World'
 
 # getall
 # curl http://127.0.0.1:5000/gym
