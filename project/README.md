@@ -1,5 +1,6 @@
-# WSAA-coursework #
-Coursework for the module 'Web Services and Applications' of the HDip in Data Analytics from ATU
+# Project #
+Files relating to the big project for the module 'Web Services and Applications' of the HDip in Data Analytics from ATU.
+(Note: files deployed to Pythonanywhere as part of this project can be found on a separate repository https://github.com/jmce22/deploytopythonanywhere.)
 
 ---
 
@@ -21,13 +22,13 @@ I then deployed my code to Pythonanywhere in the hope that by hosting the web ap
 
 Considering the inconvenience of needing to provide a config file for my local MySQL to allow the lecturer to fully test my project code (and agreeing with the lecturer's instruction, I did not do this), it may have been a better option for me to utilise an external database rather than create my own. I came to this realisation at a late stage, however, so I decided to continue and to see if I could get the web app to function properly with the database I had.
 
-My Pythonanywhere link is https://jmce24.pythonanywhere.com/ and the contents of the database I created can be seen at https://jmce24.pythonanywhere.com/gym. My deploytopythonanywhere repository can be viewed on my Github at https://github.com/jmce22/deploytopythonanywhere. In trying to get the app to work on pythonanywhere, I changed the urls in the Ajax functions in my html code so that it included my pythonanywhere address instead of my local machine's address.
+My Pythonanywhere link is https://jmce24.pythonanywhere.com/ and the contents of the database I created can be seen at https://jmce24.pythonanywhere.com/gym. My deploytopythonanywhere repository can be viewed on my Github at https://github.com/jmce22/deploytopythonanywhere. In trying to get the app to work on pythonanywhere, I changed the urls in the Ajax functions in my HTML code so that it included my pythonanywhere address instead of my local machine's address.
 
 Included in this folder are files that contain my code for the project, a gitignore file and this README file.
 
 The files containing my code are as follows: 
 - *rest_server.py* - my Flask server. Included in this file are curl commands (commented out) which can be used in the Windows command prompt to update the database.
-- *gymDAO.py* - my data access object (DAO), which is the interface between my server and the html code for the web app. This calls upon my config file to retrieve log-in details to gain access to the SQL database I created. It contains functions to carry out CRUD operations.
+- *gymDAO.py* - my data access object (DAO), which is the interface between my server and the HTML code for the web app. This calls upon my config file to retrieve log-in details to gain access to the SQL database I created. It contains functions to carry out CRUD operations.
 - *memberlist.html* - my HTML code for the web app. I made heavy use of the lecturer's code, along with W3-schools and the Bootstrap documentation to attempt to create the app. 
 - *testgymDAO.py* - a file I used to test whether my functions for each CRUD operation did what I wanted them to do.
 
@@ -58,4 +59,4 @@ pip install mysql-connector-python
 
 - Run the code for the Flask server by typing 'python rest_server.py' and hitting enter. This should set up the server on your machine; however, since the database that I am using in this project was one that I created, possession of my config file is needed to access it. 
 
-- My html file can be opened on your browser by right-clicking on it in the file explorer on VS Code and selecting 'Copy Path'. This can then be pasted into the browser.
+- My HTML file can be opened on your browser by right-clicking on it in the file explorer on VS Code and selecting 'Copy Path'. This can then be pasted into the browser.
